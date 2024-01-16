@@ -12,6 +12,17 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
+import requests
+
+url = 'http://openapi.seoul.go.kr:8088/sample/xml/CardSubwayStatsNew/1/5/20220301'
+
+a = st.button("aa")
+
+if a:
+    response = requests.get(url)
+    st.write(response.content)
+    print(response.content)
+
 
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
